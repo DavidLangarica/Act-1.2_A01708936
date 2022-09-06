@@ -12,7 +12,7 @@
 #include "search.h"
 #include "bubble.h"
 #include "selection.h"
-#include "insertion.h"
+#include "insertion.h" 
 
 
 using std::cin, std::ifstream, std::ofstream, std::vector;
