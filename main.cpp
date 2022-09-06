@@ -19,18 +19,19 @@ using std::cin, std::endl, std::ifstream, std::ofstream, std::vector;
 
 int main(int argc, char* argv[]) {
 
-	int n,q,d,s,aux1,aux2,aux3;
+	int n, q, i = 0, j = 0, aux1, aux2, aux3;
 	vector<int> vector, vectorv2, vectorv3;
 	pair <int,int> searches;
 
-	ifstream archivo(argv[1]); // Porque es en terminal
+	ifstream archivo(argv[1]); 
 	ofstream archivo2(argv[2]);
 
-	archivo >> n; //Datos primera linea
+	archivo >> n; 
 
-	for (int i = 0; i < n; i++){ //Datos segunda linea
+	while (i < n) {
 		archivo >> q;
-		vector.push_back(q); //Guardar datos Buscar alternativa
+		vector.push_back(q);
+		i++;
 	}
 
 	vectorv2 = vector; 
@@ -40,17 +41,18 @@ int main(int argc, char* argv[]) {
 	aux2 = selectionSort(vectorv2); 
 	aux3 = insertionSort(vectorv3);
 
-	archivo2 << aux1 << " " << aux2 << " " << aux3 << endl << endl;
+	archivo2 << aux1 << " " << aux2 << " " << aux3 << "\n" << "\n";
 
-	archivo >> d;
+	archivo >> n;
 
-	for (int i = 0; i < d; i++){
-		archivo >> s;
-		searches = sequentialSearch(vector,s); 
+	while (j < n){
+		archivo >> q;
+		searches = sequentialSearch(vector, q); 
 		archivo2 << searches.first << " " << searches.second << " "; 
 
-		searches = binarySearch(vector, s);
+		searches = binarySearch(vector, q);
 		archivo2 << searches.second << endl;
+		j++;
 	}
 
 	archivo.close();
