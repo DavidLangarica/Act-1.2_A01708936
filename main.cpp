@@ -15,7 +15,7 @@
 #include "insertion.h"
 
 
-using std::cin, std::endl, std::ifstream, std::ofstream, std::vector;
+using std::cin, std::ifstream, std::ofstream, std::vector;
 
 int main(int argc, char* argv[]) {
 
@@ -51,7 +51,7 @@ int main(int argc, char* argv[]) {
 		archivo2 << searches.first << " " << searches.second << " "; 
 
 		searches = binarySearch(vector, q);
-		archivo2 << searches.second << endl;
+		archivo2 << searches.second << "\n";
 		j++;
 	}
 
